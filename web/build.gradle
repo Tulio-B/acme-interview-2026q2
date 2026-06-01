@@ -1,0 +1,16 @@
+plugins {
+    id 'base'
+    id 'com.github.node-gradle.node' version '7.1.0'
+}
+
+tasks.register('npmBuild', YarnTask) {
+    dependsOn 'npmInstall'
+    args = ['run', 'build']
+}
+
+tasks.register('npmDev', YarnTask) {
+    dependsOn 'npmInstall'
+    args = ['run', 'dev']
+}
+
+assemble.dependsOn(npmBuild)

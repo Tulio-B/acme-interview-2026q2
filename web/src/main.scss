@@ -1,0 +1,5 @@
+@use '@carbon/type' as *;
+
+.small {
+  @include type-style('helper-text-01')
+}

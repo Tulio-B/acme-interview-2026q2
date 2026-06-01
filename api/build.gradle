@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.0.0'
+}
+
+dependencies {
+	runtimeOnly project(':web')
+    implementation platform('org.springframework.boot:spring-boot-dependencies:4.0.0')
+
+    implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    runtimeOnly 'com.h2database:h2'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}
